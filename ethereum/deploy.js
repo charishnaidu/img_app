@@ -3,8 +3,7 @@ const Web3 = require('web3');
 const compiledFactory = require("../ethereum/build/CampaignFactory.json");
 
 const provider = new HDWalletProvider(
-    'Mnemonic',
-    'Link from Infura to connect to Rinkeby network'
+    process.env.MNEMONIC, process.env.INFURA_API
 );
 const web3 = new Web3(provider);
 
@@ -18,7 +17,6 @@ const deploy = async () => {
         .send({ gas: '1000000', from: accounts[0] });
 
     console.log('Contract deployed to', result.options.address);
-    //0x36d4cCC3B26dd0C68cd957A356574CdDD08b2FB7
     provider.engine.stop();
 };
 deploy();
