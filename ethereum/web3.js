@@ -1,3 +1,4 @@
+// web3.js
 import Web3 from "web3";
 
 let web3;
@@ -8,9 +9,7 @@ if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
     web3 = new Web3(window.ethereum);
 } else {
     // We are on the server *OR* the user is not running metamask
-    const provider = new Web3.providers.HttpProvider(
-        'https://rinkeby.infura.io/v3/9b7c8f86d0694bf6b358e3c7f2197dfc'
-    );
+    const provider = new Web3.providers.HttpProvider(process.env.INFURA_API);
     web3 = new Web3(provider);
 }
 
