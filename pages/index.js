@@ -15,7 +15,7 @@ class CampaignIndex extends Component {
                 header: address,
                 description: (
                     <Link route={`/campaigns/${address}`}>
-                        <a>View Campaigns</a>
+                        <a>View Campaign</a>
                     </Link>
                 ),
                 fluid: true
@@ -27,9 +27,7 @@ class CampaignIndex extends Component {
         return (
             <Layout>
                 <div>
-
                     <h3>Open Campaigns</h3>
-
                     <Link route="/campaigns/new">
                         <a>
                             <Button
